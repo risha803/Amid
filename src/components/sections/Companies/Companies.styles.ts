@@ -5,7 +5,7 @@ interface CardProps {
 }
 
 export const Wrapper = styled.section`
-  padding: 80px 0;
+  padding: 89px 50px;
 `;
 
 export const Grid = styled.div`
