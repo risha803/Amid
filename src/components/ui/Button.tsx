@@ -1,28 +1,16 @@
-import styled, { css } from "styled-components";
+import * as S from "./Button.style";
 
-interface Props {
-  variant?: "primary" | "accent";
-}
+import arrow from "../../assets/img/green-arrow.svg";
 
-export const Button = styled.button<Props>`
-  padding: 12px 26px;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 14px;
-  transition: 0.2s;
+type Props = {
+  children: React.ReactNode;
+  href?: string;
+};
 
-  ${({ theme, variant = "primary" }) =>
-    variant === "primary"
-      ? css`
-          background: ${theme.colors.primary};
-          color: ${theme.colors.white};
-        `
-      : css`
-          background: ${theme.colors.accent};
-          color: ${theme.colors.white};
-        `}
-
-  &:hover {
-    opacity: 0.9;
-  }
-`;
+export const Button = ({ children, href = "#" }: Props) => {
+  return (
+    <S.ButtonSection href={href} arrowUrl={arrow}>
+      {children}
+    </S.ButtonSection>
+  );
+};
