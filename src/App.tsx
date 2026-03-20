@@ -4,6 +4,7 @@ import { Companies } from "./components/sections/Companies/Companies";
 import { Hero } from "./components/sections/Hero/Hero";
 import { Services } from "./components/sections/Services/Services";
 import { CaseSection } from "./components/sections/Case/Case";
+import { Blog } from "./components/sections/Blog/Blog";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Services />
       <Achievements />
       <CaseSection />
+      <Blog /> 
     </>
   );
 }
