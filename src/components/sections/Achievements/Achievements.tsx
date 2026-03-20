@@ -11,23 +11,18 @@ export const Achievements = () => {
     <S.Wrapper>
 
       <Container>
-
-        <S.Header>
-          <SectionLabel>
-            achievements
-          </SectionLabel>
-
-          <SectionTitle>
-            We Worked With 100+ Company Over 10 Years
-          </SectionTitle>
-        </S.Header>
-
         <S.Content>
+          <S.Header>
+            <SectionLabel>
+              achievements
+            </SectionLabel>
 
+            <SectionTitle>
+              We Worked With 100+ Company Over 10 Years
+            </SectionTitle>
+          </S.Header>
           <StatsList />
-
         </S.Content>
-
       </Container>
 
     </S.Wrapper>
