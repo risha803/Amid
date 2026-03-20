@@ -5,12 +5,13 @@ import { useCountUp } from "../../hooks/useCountUp";
 
 type Props = {
   stat: Stat;
+  index: number;
 };
 
-export const StatsCard = ({ stat }: Props) => {
+export const StatsCard = ({ stat, index }: Props) => {
   const { value, label, description } = stat;
 
-  const { ref, inView } = useInView({ //наблюдатель
+  const { ref, inView } = useInView({
     triggerOnce: true,
   });
 
@@ -36,7 +37,11 @@ export const StatsCard = ({ stat }: Props) => {
   };
 
   return (
-    <S.StatItem ref={ref}>
+    <S.StatItem
+      ref={ref}
+      $visible={inView}
+      $delay={index}
+    >
       <S.StatValue>
         {formatValue(animatedValue)}
       </S.StatValue>

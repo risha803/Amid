@@ -1,6 +1,7 @@
 import * as S from "./Services.style";
 import type { Service } from "./services.data";
 import { Button } from "../../ui/Button"
+import { CardTitle } from "../../ui/CardTitle";
 
 type Props = {
   service: Service;
@@ -15,7 +16,7 @@ export const ServiceCard = ({ service }: Props) => {
         <img src={icon} alt={title} />
       </S.IconWrapper>
 
-      <S.CardTitle>{title}</S.CardTitle>
+      <CardTitle>{title}</CardTitle>
 
       <S.CardDescription>{description}</S.CardDescription>
 

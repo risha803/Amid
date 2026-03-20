@@ -25,16 +25,27 @@ export const StatsList = styled.div`
   gap: 30px;
 `;
 
-export const StatItem = styled.div`
+export const StatItem = styled.div<{
+  $visible: boolean;
+  $delay: number;
+}>`
   display: grid;
   grid-template-columns: 120px 1fr 1fr;
   align-items: center;
   gap: 30px;
 
-  transition: transform 0.3s ease;
+  opacity: ${({ $visible }) => ($visible ? 1 : 0)};
+  transform: ${({ $visible }) =>
+    $visible ? "translateY(0)" : "translateY(30px)"};
+
+  transition: 
+    opacity 0.6s ease,
+    transform 0.6s ease;
+
+  transition-delay: ${({ $delay }) => $delay * 0.15}s;
 
   &:hover {
-    transform: translateX(6px);
+    transform: translateY(0) translateX(6px);
   }
 `;
 
